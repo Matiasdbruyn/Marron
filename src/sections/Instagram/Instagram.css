@@ -1,0 +1,8 @@
+.insta__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .6rem; }
+.insta__grid a { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); background: var(--crema-oscuro); }
+.insta__grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), filter .5s; }
+.insta__grid a:hover img { transform: scale(1.06); filter: brightness(.85); }
+
+@media (max-width: 1024px) {
+  .insta__grid { grid-template-columns: repeat(3, 1fr); }
+}

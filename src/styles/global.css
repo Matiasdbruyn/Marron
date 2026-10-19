@@ -1,0 +1,102 @@
+/* ============================================================
+   MARRÓN — Estilos globales (paleta, tipografías, base, botones)
+   Los estilos de cada sección están en su propia carpeta.
+   Tipografías: Montserrat (títulos) + Noto Sans (texto), desde Google Fonts en index.html
+   ============================================================ */
+
+/* ---------- Paleta ---------- */
+:root {
+  --marron: #815731;
+  --caramelo: #B38256;
+  --crema: #F4EDE4;
+  --crema-claro: #FAF6F0;
+  --crema-oscuro: #EAE0D2;
+  --taupe: #9E9589;
+  --salvia: #B8B491;
+  --carbon: #4E4E4F;
+
+  --f-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-label: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1240px;
+  --radius: 6px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --header-h: 76px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); }
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--carbon);
+  font-family: var(--f-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; font-weight: 600; color: var(--marron); letter-spacing: -.02em; }
+p { margin: 0 0 1em; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--marron); outline-offset: 3px; }
+
+.eyebrow {
+  font-family: var(--f-label);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--caramelo);
+  margin-bottom: 1rem;
+}
+.eyebrow .dot { font-family: var(--f-body); letter-spacing: 0; margin: 0 .5em; font-size: .9em; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  font-family: var(--f-label);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 1.05em 1.8em;
+  border-radius: 999px;
+  border: 1px solid var(--marron);
+  transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+  white-space: nowrap;
+}
+.btn--solid { background: var(--marron); color: var(--crema); }
+.btn--solid:hover { background: var(--carbon); border-color: var(--carbon); }
+.btn--ghost { color: var(--marron); }
+.btn--ghost:hover { background: var(--marron); color: var(--crema); }
+.btn--light { background: var(--crema); color: var(--marron); border-color: var(--crema); }
+.btn--light:hover { background: transparent; color: var(--crema); }
+.btn--outline-light { color: var(--crema); border-color: rgba(244,237,228,.6); }
+.btn--outline-light:hover { background: var(--crema); color: var(--marron); }
+
+/* ---------- Secciones (estructura común) ---------- */
+.section { max-width: var(--max); margin: 0 auto; padding: clamp(4rem, 9vw, 7rem) var(--gutter); }
+.section__head { text-align: center; max-width: 36rem; margin: 0 auto clamp(2rem, 4vw, 3rem); }
+.section__title { font-family: var(--f-display); font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.15; }
+.section__title a:hover { color: var(--caramelo); }
+.section__lead { margin-top: .9rem; color: #6b6762; }
+
+/* ---------- Animaciones de entrada (ver hooks/useReveal.js) ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (max-width: 560px) {
+  body { font-size: .98rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+}

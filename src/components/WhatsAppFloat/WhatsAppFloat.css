@@ -1,0 +1,10 @@
+.wa-float {
+  position: fixed; right: clamp(16px, 2.5vw, 28px); bottom: clamp(16px, 2.5vw, 28px); z-index: 40;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--marron); display: grid; place-items: center;
+  box-shadow: 0 10px 30px -10px rgba(129,87,49,.7);
+  transition: transform .3s var(--ease), background .3s;
+}
+.wa-float:hover { transform: scale(1.07); background: var(--carbon); }
+.wa-float svg { width: 26px; height: 26px; fill: none; stroke: var(--crema); stroke-width: 1.5; stroke-linejoin: round; }
+.wa-float svg .fill { fill: var(--crema); stroke: none; }

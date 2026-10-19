@@ -1,11 +1,15 @@
+# Dependencias y build
+node_modules/
+dist/
+
 # Material original del Drive (fuentes, PDFs y fotos sin procesar)
 _drive/
 
-# Configuración local del editor / Claude
+# Configuración local del editor
 .claude/
+.vscode/
 
 # Sistema
-node_modules/
 .DS_Store
 Thumbs.db
 desktop.ini

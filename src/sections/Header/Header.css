@@ -1,0 +1,55 @@
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(244,237,228,.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, box-shadow .3s;
+}
+.header.is-scrolled { border-color: var(--crema-oscuro); box-shadow: 0 6px 24px -18px rgba(78,78,79,.5); }
+.header__inner {
+  max-width: var(--max); margin: 0 auto;
+  height: var(--header-h);
+  padding: 0 var(--gutter);
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+}
+.header__nav { display: flex; gap: clamp(1.2rem, 2.6vw, 2.6rem); }
+.header__nav a {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase;
+  position: relative; padding: .4em 0;
+}
+.header__nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+  background: var(--marron); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease);
+}
+.header__nav a:hover::after { transform: scaleX(1); }
+.header__logo { display: block; flex: 0 0 auto; }
+.header__logo img { height: 30px; width: auto; }
+.header__burger { display: none; width: 40px; height: 40px; position: relative; }
+.header__burger span {
+  position: absolute; left: 9px; right: 9px; height: 1.5px; background: var(--carbon);
+  transition: transform .3s var(--ease), top .3s var(--ease);
+}
+.header__burger span:nth-child(1) { top: 15px; }
+.header__burger span:nth-child(2) { top: 24px; }
+.header__burger[aria-expanded="true"] span:nth-child(1) { top: 19.5px; transform: rotate(45deg); }
+.header__burger[aria-expanded="true"] span:nth-child(2) { top: 19.5px; transform: rotate(-45deg); }
+
+/* Menú hamburguesa: celulares y pantallas angostas */
+@media (max-width: 760px) {
+  :root { --header-h: 64px; }
+  .header__burger { display: block; margin-right: -8px; }
+  .header__nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--crema); border-bottom: 1px solid var(--crema-oscuro);
+    padding: .5rem var(--gutter) 1.2rem;
+    clip-path: inset(0 0 100% 0); visibility: hidden;
+    transition: clip-path .45s var(--ease), visibility 0s .45s;
+  }
+  .header__nav.is-open { clip-path: inset(0); visibility: visible; transition: clip-path .45s var(--ease); }
+  .header__nav a { padding: 1rem 0; border-bottom: 1px solid var(--crema-oscuro); font-size: .76rem; }
+  .header__nav a:last-child { border-bottom: 0; }
+  .header__nav a::after { display: none; }
+  .header__logo img { height: 24px; }
+}
