@@ -21,7 +21,13 @@ export default function About() {
           />
         </figure>
         <figure className="essence__img essence__img--b reveal">
-          <img src={asset("img/productos/bandolera-11.jpg")} alt="Bandolera en la calle" loading="lazy" width="1200" height="1600" />
+          <img
+            src={asset("img/productos/bandolera-7.jpg")}
+            alt="Bandolera Tierra a la altura de la cadera"
+            loading="lazy"
+            width="1200"
+            height="1600"
+          />
         </figure>
       </div>
 

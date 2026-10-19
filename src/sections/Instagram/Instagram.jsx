@@ -6,7 +6,7 @@ const FOTOS = [
   { src: "img/productos/tote-bordo-1.jpg", alt: "Tote Bordó" },
   { src: "img/productos/bandolera-9.jpg", alt: "Detalle de bandoleras" },
   { src: "img/productos/tote-negra-1.jpg", alt: "Tote Margarita y Tote Bordó" },
-  { src: "img/productos/bandolera-7.jpg", alt: "Bandolera Tierra en uso" },
+  { src: "img/productos/bandolera-5.jpg", alt: "Bandolera Tierra con el bolsillo frontal" },
   { src: "img/productos/bandolera-2.jpg", alt: "Bandolera Tierra de frente" },
   { src: "img/productos/bandolera-6.jpg", alt: "Bandolera Tierra de costado" },
 ];
