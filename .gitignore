@@ -1,0 +1,11 @@
+# Material original del Drive (fuentes, PDFs y fotos sin procesar)
+_drive/
+
+# Configuración local del editor / Claude
+.claude/
+
+# Sistema
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
