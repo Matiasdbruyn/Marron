@@ -9,9 +9,8 @@
    ============================================================ */
 
 export const CONFIG = {
-  // Número con código de país, sin "+", espacios ni guiones. Ej: 5491123456789
-  // TODO: reemplazar por el número real de la clienta.
-  whatsapp: "5491100000000",
+  // Número con código de país, sin "+", espacios ni guiones (+54 9 11 3819-8621)
+  whatsapp: "5491138198621",
   instagram: "marron.ar",
 };
 
