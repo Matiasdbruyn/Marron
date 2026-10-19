@@ -15,9 +15,7 @@
 
 **Marrón** hace bandoleras, riñoneras, tote bags y neceseres en lona y gabardina, en tonos tierra. Vende por mayor y por menor y hace envíos a todo el país.
 
-La clienta quería una página **linda, sutil y muy visual** para mostrar sus productos. No buscaba una tienda online (por ahora): la idea es que la gente vea los productos y escriba directo por **WhatsApp** o **Instagram** para consultar stock, colores y precios.
-
-Por eso la página funciona como una vitrina:
+La página funciona como una vitrina:
 
 - **Portada** con la identidad de la marca y acceso directo a WhatsApp.
 - **Catálogo** filtrable por categoría. Cada producto abre una ventana con todas sus fotos, sus detalles y un botón de WhatsApp que ya trae escrito el nombre del producto.
